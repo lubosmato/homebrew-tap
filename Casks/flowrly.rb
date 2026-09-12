@@ -1,6 +1,6 @@
 cask "flowrly" do
   version "0.1.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "58a6ec0ad738b585c990c332c685013a4291fcfbf63db1eceea00cb7008230e6"
 
   url "https://github.com/lubosmato/flowrly/releases/download/v#{version}/Flowrly_#{version}_aarch64.dmg"
   name "Flowrly"
