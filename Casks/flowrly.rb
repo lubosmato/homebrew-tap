@@ -8,15 +8,12 @@ cask "flowrly" do
   homepage "https://github.com/lubosmato/flowrly"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :monterey"
 
   app "Flowrly.app"
 
   # The app is not notarized; drop the quarantine flag so Gatekeeper lets it launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Flowrly.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Flowrly.app"]
   end
 
   zap trash: [
